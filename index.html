@@ -8,6 +8,9 @@
 </head>
 <body>
     <button onclick="subscribe()">Subscribe</button>
+    <div id="subData">
+
+    </div>
     <script>
         addEventListener('load', async() => {
             let sw = await navigator.serviceWorker.register('./sw.js');
@@ -20,7 +23,8 @@
                 userVisibleOnly: true,
                 applicationServerKey: 'BOTYU-CwHxr0YFolWVdwLnQJJ5WvZLKdErAL5xAQ4B9LsX4p0FffF0XZavO4ACfnV3xt24ToAKpopQXs7woABjU'
             })
-
+            const subData = document.getElementById('subData');
+            subData.innerText = JSON.stringify(push);
             console.log(JSON.stringify(push));
         }
     </script>
